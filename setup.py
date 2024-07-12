@@ -1,25 +1,11 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-import os.path
-
 from setuptools import setup, find_packages
 
-full_version = ''
-
-root_dir = os.path.abspath(os.path.dirname(__file__))
-
-readme_file = os.path.join(root_dir, 'README.rst')
-with open(readme_file, encoding='utf-8') as f:
+with open('README.rst', encoding='utf-8') as f:
     long_description = f.read()
-
-version_module = os.path.join(root_dir, 'src', 'mattermostdriver', 'version.py')
-with open(version_module, encoding='utf-8') as f:
-    exec(f.read())
 
 setup(
     name='mattermostdriver',
-    version=full_version,
+    version='7.5.0',
     description='A Python Mattermost Driver',
     long_description=long_description,
     url='https://github.com/Vaelor/python-mattermost-driver',
@@ -45,4 +31,5 @@ setup(
         'aiohttp',
         'httpx',
     ],
+    include_package_data=True,  # Ensure that package data specified in MANIFEST.in is included
 )
