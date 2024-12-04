@@ -29,7 +29,7 @@ setup(
     python_requires=">=3.6",
     install_requires=[
         'aiohttp',
-        'httpx',
+        'httpx<=0.27.2',
     ],
     include_package_data=True,  # Ensure that package data specified in MANIFEST.in is included
 )
